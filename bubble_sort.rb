@@ -1,13 +1,20 @@
 class BubbleSort
   def sort(numbers)
-    numbers.each_with_index do |num, index|
-      neighbor_index = index + 1
-      neighbor = numbers[neighbor_index]
+    swapped_this_iteration = true
 
-      if !neighbor.nil? && num > neighbor
-        # puts "need to swap #{num} with #{neighbor}"
-        swap(numbers,index, neighbor_index)
+    while swapped_this_iteration do
+      swapped_this_iteration = false
+
+      numbers.each_with_index do |num, index|
+        neighbor_index = index + 1
+        neighbor = numbers[neighbor_index]
+
+        if !neighbor.nil? && num > neighbor
+          swap(numbers,index, neighbor_index)
+          swapped_this_iteration = true
+        end
       end
+
     end
     numbers
   end

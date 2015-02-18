@@ -38,6 +38,17 @@ class BubbleSortTest < Minitest::Test
     bs = BubbleSort.new
     numbers = [3,2,1]
     assert_equal [1,2,3], bs.sort(numbers)
+  end
 
+  def test_it_sorts_harder_things
+    bs = BubbleSort.new
+    numbers = [4,1,7,3,9,2]
+    assert_equal [1,2,3,4,7,9], bs.sort(numbers)
+  end
+
+  def test_it_sorts_big_array
+    bs = BubbleSort.new
+    numbers = (1..10000).to_a.shuffle
+    assert_equal (1..10000).to_a, bs.sort(numbers)
   end
 end
