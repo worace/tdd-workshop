@@ -8,7 +8,10 @@ class Cryptographer
     # how do i encrypt a multicharacter string?
       # encrypt each character individually
 
-    encrypt_char(message[0]) # "a"
+    encrypted_chars = message.chars.map do |char|
+                        encrypt_char(char)
+                      end
+    encrypted_chars.join
   end
 
   def encrypt_char(char)

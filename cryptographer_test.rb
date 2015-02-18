@@ -22,9 +22,8 @@ class CryptographerTest < Minitest::Test
   end
 
   def test_it_encrypts_2_letters
-    skip
     cryptographer = Cryptographer.new
-    assert_equal "nq", cryptographer.encrypt_char("ad")
+    assert_equal "nq", cryptographer.encrypt("ad")
   end
 
   def test_it_encrypts_a_single_char
